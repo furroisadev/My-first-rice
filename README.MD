@@ -1,64 +1,39 @@
-Dotfiles You’d Need to Copy:
+# Furro's BSPWM Rice Guide
 
-    ~/.config/bspwm/ — your bspwm config (bspwmrc and rules)
+A minimal but sleek X11 rice using **bspwm**, **picom**, **polybar**, and **pywal** with a purple starry aesthetic. Designed to work without a display manager (no LightDM), and confirmed to work with AMD cards using the `amdgpu` driver.
 
-    ~/.config/sxhkd/ — your hotkey daemon config (sxhkdrc)
+---
 
-    ~/.config/picom/ — for blur, rounded corners, transparency
+## 🔧 Dependencies
 
-    ~/.config/polybar/ — your status bar configs & launch scripts
+Install the following packages:
 
-    ~/.config/wal/ — pywal cache & related scripts (optional but recommended)
+```bash
+sudo apt install bspwm sxhkd xorg xinit alacritty picom rofi polybar git curl unzip
+```
 
-    ~/.config/alacritty/ — terminal colors & config (to pick up pywal colors)
+Also install pywal with pipx (recommended)
+```bash
+pipx install pywal
+```
+Ensure pipx is set up in your shell
+```bash
+pipx ensurepath
+```
+Ensure you have the xinit package installed (assuming you aren't using a display manager eg. lightdm, gdm3, or sddm)
 
-    ~/.xinitrc — to start bspwm when you run startx
+```bash
+sudo apt install xinit
+```
+the start it with
+```bash
+startx
+```
 
-    Shell config file (~/.bashrc or ~/.zshrc) — for pywal auto-color loading
+##Useful Notes
+###Pywal not applying to new terminals?
 
-    ~/.local/share/applications/spotify.desktop — so rofi can launch Spotify (if you want that)
-
-🧰 Commands & Fixes You’d Run (in order)
-1. Install essentials (adjust package manager as needed):
-
-sudo apt install bspwm sxhkd picom rofi alacritty polybar feh x11-xserver-utils xinit python3-pywal
-
-2. FYI,this will not be perfect. This is like, my first time doing anything with Git or advanced stuff (to me) on linux.
-
-3. Setup ~/.xinitrc to launch bspwm:
-
-echo 'exec bspwm' > ~/.xinitrc
-chmod +x ~/.xinitrc
-
-4. Add pywal color auto-load to shell config:
-
-echo '[[ -f "$HOME/.cache/wal/sequences" ]] && cat "$HOME/.cache/wal/sequences"' >> ~/.bashrc
-source ~/.bashrc
-
-5. Create ~/.local/share/applications/spotify.desktop if you want Spotify in rofi:
-
-mkdir -p ~/.local/share/applications
-cat > ~/.local/share/applications/spotify.desktop <<EOF
-[Desktop Entry]
-Name=Spotify
-Exec=spotify
-Icon=spotify
-Terminal=false
-Type=Application
-Categories=AudioVideo;Player;Music;
-StartupNotify=true
-EOF
-
-chmod +x ~/.local/share/applications/spotify.desktop
-
-6. Run startx to launch bspwm
-7. After logging into bspwm, launch your bar (polybar) and compositor (picom):
-
-~/.config/polybar/launch.sh &
-picom &
-
-Or add those lines to your bspwmrc to launch them automatically on session start.
-Bonus: Set wallpaper and generate colors
-
-wal -i ~/Pictures/Wallpapers/starfield.jpg
-
+Add this to your shell config (e.g. ~/.zshrc or ~/.bashrc)
+```bash
+[ -f "$HOME/.cache/wal/sequences" ] && cat "$HOME/.cache/wal/sequences"
+```
