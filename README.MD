@@ -23,16 +23,7 @@ Dotfiles You’d Need to Copy:
 
 sudo apt install bspwm sxhkd picom rofi alacritty polybar feh x11-xserver-utils xinit python3-pywal
 
-2. Set GPU driver fix for your R9 290X:
-
-sudo nano /etc/default/grub
-# Add to GRUB_CMDLINE_LINUX_DEFAULT:
-# amdgpu.cik_support=1 radeon.cik_support=0
-sudo update-grub
-
-echo -e "blacklist radeon\noptions amdgpu cik_support=1\noptions radeon cik_support=0" | sudo tee /etc/modprobe.d/amdgpu.conf
-
-sudo reboot
+2. FYI,this will not be perfect. This is like, my first time doing anything with Git or advanced stuff (to me) on linux.
 
 3. Setup ~/.xinitrc to launch bspwm:
 
