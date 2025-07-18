@@ -31,6 +31,7 @@ startx
 ```
 
 ##Useful Notes
+
 ###Pywal not applying to new terminals?
 
 Add this to your shell config (e.g. ~/.zshrc or ~/.bashrc)
