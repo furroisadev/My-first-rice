@@ -17,4 +17,4 @@ picom --config ~/.config/picom/picom.conf &
 nitrogen --restore &
 dunst &
 polybar &
-wal -i .config/feh/wallpaper/astrophotography-3840x2160-21270.jpg
+wal -i ~/.config/bspwm/wallpaper.jpg
