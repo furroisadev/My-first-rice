@@ -2,6 +2,7 @@
 
 A minimal but sleek X11 rice using **bspwm**, **picom**, **polybar**, and **pywal** with a purple starry aesthetic. Designed to work without a display manager (no LightDM), and confirmed to work with AMD cards using the `amdgpu` driver.
 
+Im new to git sothis is kinda like my learning thing aswell
 ---
 
 ## 🔧 Dependencies
