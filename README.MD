@@ -11,7 +11,8 @@ Im new to git sothis is kinda like my learning thing aswell
 Install the following packages:
 
 ```bash
-sudo apt install bspwm sxhkd xorg xinit alacritty picom rofi polybar git curl unzip
+
+sudo apt install feh bspwm sxhkd xorg xinit alacritty picom rofi polybar git curl unzip
 ```
 
 Also install pywal with pipx (recommended)
@@ -33,6 +34,8 @@ startx
 ```
 
 ##Useful Notes
+
+If startx is not starting or loading bspwm correctly, be sure to `exec bspwm` into your `.xinitrc` file
 
 ###Pywal not applying to new terminals?
 
