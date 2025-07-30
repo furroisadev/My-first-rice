@@ -1,4 +1,4 @@
-# Furro's BSPWM Rice Guide
+# BSPWM rice dotfiles 1
 
 A minimal but sleek X11 rice using **bspwm**, **picom**, **polybar**, and **pywal** with a purple starry aesthetic. Designed to work without a display manager (no LightDM), and confirmed to work with AMD cards using the `amdgpu` driver.
 
