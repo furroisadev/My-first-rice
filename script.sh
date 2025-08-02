@@ -1,0 +1,1 @@
+sh -c "$(curl -fsSL https://raw.githubusercontent/ohmyzsh/ohmyzsh/master/tools/install.sh)"
